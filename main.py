@@ -234,21 +234,7 @@ async def cuddle(ctx, member: guilded.Member):
   embed.set_footer(text=footer)
   await ctx.send(embed=embed)
 
-
-@bot.command()
-async def love(ctx, member: guilded.Member):
-  if ctx.author.id == "my2epXyA" or ctx.author.id == "mM6XRZbA":
-    embed = guilded.Embed(
-        title=f"{ctx.author.mention} makes love to {member.mention}",
-        description=f"{ctx.author.mention} makes love to {member.mention} ❤️❤️",
-        color=guilded.Color.gold(),
-    )
-    embed.set_footer(text=footer)
-    await ctx.send(embed=embed)
-  else:
-    await ctx.send("Uhm.. Excuse me, what?")
-
-
+# rps is not done and doesnt work. this is a test and hidden command.
 @bot.command()
 async def rps(ctx, member: guilded.Member):
   embed = guilded.Embed(
