@@ -36,7 +36,7 @@ bot = commands.Bot(command_prefix=botprefix)
 client = guilded.Client()
 
 # bot setup variables
-TOKEN = "gapi_nATCehMKKv/ORITvHj0xzVdqqLqNkx6AgAg5/B2WQeHuyJrkANrKSI0ADlpHNXwEhkqj01LspENNCO1VteMp+A=="
+TOKEN = "xxxxxxxxx"
 footer = "🧃 Juicebox"
 muterole = []
 
@@ -339,20 +339,6 @@ async def quote(ctx):
     )
   embed.set_footer(text=footer)
   await ctx.send(embed=embed)
-
-
-@bot.command()
-async def ban(ctx, member: guilded.Member, confirm):
-  if confirm == "myferSignedThis":
-    await member.ban()
-    embed = guilded.Embed(
-        title="User Banned",
-        description=f"{member.mention} has been banned.",
-        color=guilded.Color.red(),
-    )
-    embed.set_footer(text=footer)
-    await ctx.send(embed=embed)
-
 
 @bot.command()
 async def rate(ctx, rate=None):
