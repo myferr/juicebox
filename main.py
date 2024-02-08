@@ -36,9 +36,8 @@ bot = commands.Bot(command_prefix=botprefix)
 client = guilded.Client()
 
 # bot setup variables
-TOKEN = "xxxxxxxxx"
+TOKEN = ""
 footer = "🧃 Juicebox"
-muterole = []
 
 # removing commands
 bot.remove_command('help')
@@ -87,7 +86,7 @@ async def help(ctx):
   embed = guilded.Embed(
       title="Bot Commands",
       description=
-      "**Moderation**\n setrole \nkick \nban \nmute \nunmute \npurge \n\n**Fun**\n8ball \nrate \ncoinflip \ndice \nrps \nhug \nslap \npunch \nboop \nkiss \ncuddle \nbonk \nwhisper \nquote \n\n**Utility**\navatar \nserverinfo \nuserinfo",
+      "**Fun**\n `8ball` `rate` `coinflip` `dice` `hug` `slap` `punch` `boop` `kiss` `cuddle` `bonk` `whisper` `quote` \n\n**Utility**\n `avatar` `serverinfo` `userinfo`",
       color=guilded.Color.gold(),
   )
   embed.set_footer(text=footer)
@@ -233,23 +232,6 @@ async def cuddle(ctx, member: guilded.Member):
   )
   embed.set_footer(text=footer)
   await ctx.send(embed=embed)
-
-# rps is not done and doesnt work. this is a test and hidden command.
-@bot.command()
-async def rps(ctx, member: guilded.Member):
-  embed = guilded.Embed(
-      title="Rock, Paper, Scissors",
-      description=
-      f"{ctx.author.mention} has challenged {member.mention} to a game of rock, paper, scissors.\nSay `accept` to accept or `decline` to decline.",
-      color=guilded.Color.gold(),
-  )
-  embed.set_footer(text=footer)
-  await ctx.send(embed=embed)
-  if member.send("accept"):
-    print("Accepted.")
-  else:
-    print("Declined")
-
 
 @bot.command()
 async def test(ctx):
